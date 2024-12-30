@@ -14,11 +14,11 @@ function AllPosts() {
         })
         .catch()
     console.log("Environment variables are: ");
-    console.log(appwriteURL);
-    console.log(appwriteProjectId);
-    console.log(appwriteDatabaseId);
-    console.log(appwriteCollectionId);
-    console.log(appwriteBucketId);
+    console.log(conf.appwriteURL);
+    console.log(conf.appwriteProjectId);
+    console.log(conf.appwriteDatabaseId);
+    console.log(conf.appwriteCollectionId);
+    console.log(conf.appwriteBucketId);
 
     return (
         <div className='w-full py-8'>
