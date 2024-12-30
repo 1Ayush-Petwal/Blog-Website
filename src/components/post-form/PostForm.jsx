@@ -54,6 +54,7 @@ function PostForm({ post }) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
                 console.log('Data is :', userData);
+                console.log('user Data is,', userData.$id)
                 data.userId = userData.$id;
                 console.log('Data is :', data);
                 const dbPost = await service.createPost({
