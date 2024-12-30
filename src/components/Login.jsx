@@ -25,8 +25,13 @@ function Login() {
                 // Now we have to store the data of the sesssioned user to the store
 
                 const userData = await authService.getCurrentUser();
-                if (userData) dispatch(authLogin(userData));
-                navigate("/")
+                console.log(userData);
+                if (userData) {
+                    dispatch(authLogin(userData));
+                    navigate("/")
+                }else{
+                    setError('User not found');
+                }
             }
         }
         catch (error) {

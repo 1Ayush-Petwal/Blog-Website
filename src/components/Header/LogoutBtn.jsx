@@ -14,7 +14,7 @@ function LogoutBtn() {
         .then(() => {
             dispatch(logout());
         })
-        navigate('/');
+        navigate('/login');
     }
   return (
     <Button
