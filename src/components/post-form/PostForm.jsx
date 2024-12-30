@@ -12,6 +12,7 @@ function PostForm({ post }) {
     // watch:- to watch a specfic field 
     // setValue and GetValue: to interact with the fields
     // control to pass the control
+    
     const { register, handleSubmit, watch, setValue, getValues,
         control
     } = useForm({

@@ -24,6 +24,7 @@ export class AuthService {
             //Checking is the userAccount was created Successfully 
             if (userAccount) {
                 // Call the login method 
+                return await this.login({email, password});
             } else {
                 return userAccount;
             }
@@ -58,7 +59,6 @@ export class AuthService {
             await this.account.deleteSessions();
         } catch (error) {
             console.log("Appwrite error is in Logging out the User: ", error);
-            null;
         }
     }
 }

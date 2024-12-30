@@ -7,6 +7,7 @@ import authService from '../services/auth';
 import { login } from '../store/authSlice';
 import { Input, Button, Logo } from "./index"
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function SignUp() {
     const dispatch = useDispatch();
@@ -22,9 +23,12 @@ function SignUp() {
 
             //Also remember that it is not always that the response will always come as expected so we are supposed to exception proof it 
             const userData = await authService.createAccount(data);
+            console.log(userData);
             if (userData) {
                 const user = await authService.getCurrentUser()
+                
                 if (user) dispatch(login(user));
+                console.log(user);
                 navigate('/')
             }
         } catch (error) {

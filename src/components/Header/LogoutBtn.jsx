@@ -4,6 +4,7 @@ import {logout} from '../../store/authSlice'
 import authService from '../../services/auth'
 import {Button}  from '../index'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function LogoutBtn() {
     const dispatch = useDispatch();
@@ -13,8 +14,14 @@ function LogoutBtn() {
         authService.logout()
         .then(() => {
             dispatch(logout());
+        }).catch((error) => {
+          console.error('Logout failed', error);
         })
-        navigate('/login');
+        .finally(() => {
+          navigate('/');
+          window.location.reload();
+          console.log('Current User Data in the store, ', useSelector((state) => state.auth.userData));
+        });
     }
   return (
     <Button
