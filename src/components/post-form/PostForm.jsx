@@ -4,6 +4,7 @@ import service from '../../services/config'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Input, Button, Select, RTE } from '../index'
+import conf from '../../conf/conf'
 
 // Post is the card the user clicks on
 function PostForm({ post }) {
@@ -30,6 +31,8 @@ function PostForm({ post }) {
     const submit = async (data) => {
 
         // Now either the post exists needs updation or a new post is created 
+        console.log(conf.appwriteUrl);
+        console.log(conf.appwriteBucketId);
         if (post) {
             // File Handling uploading the new file 
             // The file will be in the data sent

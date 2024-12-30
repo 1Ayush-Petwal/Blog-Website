@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, PostCard } from '../components/index'
 import service from '../services/config'
-import conf from '../conf/conf'
 function AllPosts() {
     // We have to import all the posts from the database
     const [posts, setPosts] = useState([])
@@ -13,12 +12,6 @@ function AllPosts() {
             }
         })
         .catch()
-    console.log("Environment variables are: ");
-    console.log(conf.appwriteURL);
-    console.log(conf.appwriteProjectId);
-    console.log(conf.appwriteDatabaseId);
-    console.log(conf.appwriteCollectionId);
-    console.log(conf.appwriteBucketId);
 
     return (
         <div className='w-full py-8'>
